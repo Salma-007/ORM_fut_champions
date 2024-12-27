@@ -15,6 +15,7 @@ class PlayerDynamic{
     // methode d'insertion joueur
     function insertRecord($conn, $table, $data) {
         // Use prepared statements to prevent SQL injection
+        
         $columns = implode(',', array_keys($data));
         $placeholders = implode(',', array_fill(0, count($data), '?'));
 
@@ -75,8 +76,8 @@ class PlayerDynamic{
     }
 
     //methode d'affichage de tous les joueurs
-    public function listPlayers($conn) {
-        $query = "SELECT * FROM players;";
+    public function listPlayers($conn,$table) {
+        $query = "SELECT * FROM $table;";
         $stmt = $conn->query($query);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
@@ -109,12 +110,12 @@ class PlayerDynamic{
 
 // Instanciation
 $player1 = new PlayerDynamic($conn);
-// $insertData = array('name' => 'taha', 'club' => 'Man City','nationality' => 'England','rating' => 55);
+// $insertData = array('name' => 'Fati', 'club' => 'Man City','nationality' => 'England','rating' =>'');
 // $player1->insertRecord($conn, 'players', $insertData);
-// $player1->deleteRecord($conn,'players', 2);
-// $updateData = array('name' => 'Jude belligoal', 'nationality' => 'english');
-// $player1->updateRecord($conn,'players',$updateData,3);
-$player1->listPlayers($conn);
+// $player1->deleteRecord($conn,'players', 7);
+$updateData = array('name' => 'Hassani', 'nationality' => 'french');
+$player1->updateRecord($conn,'players',$updateData,3);
+$player1->listPlayers($conn,'players');
 
 
 ?>

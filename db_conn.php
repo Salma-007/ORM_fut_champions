@@ -19,8 +19,8 @@ class DatabaseConnection{
 
 }
 
-var_dump(DatabaseConnection::connect());
-var_dump(DatabaseConnection::connect());
+// var_dump(DatabaseConnection::connect());
+
 
 
 ?>

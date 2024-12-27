@@ -1,5 +1,4 @@
 # Documentation en POO
-
 ### Définition 
 La programmation orientée objet modélise les entités du monde réel en utilisant des objets. 
 ### Avantages 
@@ -32,7 +31,8 @@ La programmation orientée objet modélise les entités du monde réel en utilis
 Les propriétés sont des attributs de la classe, et les méthodes sont des fonctions définies dans la classe.
 
 ## Constructeurs et Destructeurs
-Le constructeur __construct() initialise les objets. Le destructeur __destruct() nettoie les ressources.
+Le constructeur __construct() initialise les objets.<br>
+Le destructeur __destruct() nettoie les ressources.<br>
 Exemple:
 ```php
 class Database {
@@ -50,7 +50,7 @@ class Database {
 ## 2. Modificateurs d'accès
 - **public**: Accessible partout.
 - **private**: Accessible uniquement au sein de la classe.
-- **protected**: Accessible dans la classe et ses sous-classes.
+- **protected**: Accessible dans la classe et ses sous-classes.<br>
 Exemple:
 ```php
 class Example {
@@ -92,7 +92,7 @@ echo $objet->publicProp . ""; // Accès autorisé
 
 ## 4. Héritage:
 L’héritage permet à une classe enfant de bénéficier des propriétés et des méthodes définies dans sa classe parente, tout en lui permettant de définir ses propres fonctionnalités supplémentaires. Cela favorise la réutilisabilité du code en évitant la duplication et en encourageant la création de relations logiques entre les classes.
-En PHP, l’héritage est mis en œuvre à l’aide du mot-clé **extends**.
+En PHP, l’héritage est mis en œuvre à l’aide du mot-clé **extends**.<br>
 Exemple :
 ```php
 class Animal {
@@ -161,7 +161,8 @@ $car->move(); // Outputs: Car is moving.
 $car->fuelType(); // Outputs: This vehicle uses fuel.
 ```
 ## 7. Interface:
-Les interfaces en PHP permettent de définir des méthodes communes que les classes doivent implémenter. Elles servent de contrat pour garantir que les classes qui les implémentent offrent certaines fonctionnalités. Une interface ne contient que la signature des méthodes (nom et paramètres), sans fournir d’implémentation concrète. Donc, lorsque vous créez une interface, vous déclarez essentiellement un ensemble de méthodes, mais vous ne fournissez pas d’implémentation pour ces méthodes.
+Les interfaces en PHP permettent de définir des méthodes communes que les classes doivent implémenter. Elles servent de contrat pour garantir que les classes qui les implémentent offrent certaines fonctionnalités.<br>
+Une interface ne contient que la signature des méthodes (nom et paramètres), sans fournir d’implémentation concrète. Donc, lorsque vous créez une interface, vous déclarez essentiellement un ensemble de méthodes, mais vous ne fournissez pas d’implémentation pour ces méthodes.<br>
 Ensuite, lorsque vous créez une classe qui implémente cette interface, vous devez fournir une implémentation concrète pour chaque méthode définie dans l’interface. Cela garantit que votre objet respecte le contrat défini par l’interface et offre les fonctionnalités attendues.
 ```php
 interface Animal {
@@ -220,7 +221,8 @@ $admin->logout(); // Affichera "Déconnecté avec succès!"
 ```
 ## 9. Autoload:
 L’autoload en PHP est un mécanisme qui permet de charger automatiquement les classes lorsqu’elles sont utilisées pour la première fois dans votre code, sans avoir à les inclure manuellement avec require ou include. Cela rend la gestion des dépendances de classe beaucoup plus facile et évite d’avoir à écrire des tonnes d’instructions require_once dans chaque fichier.
-Voici un exemple concret pour illustrer comment fonctionne l’autoload. Supposons que nous ayons une classe MaClasse définie dans un fichier MaClasse.php:
+Voici un exemple concret pour illustrer comment fonctionne l’autoload.<br>
+Supposons que nous ayons une classe MaClasse définie dans un fichier MaClasse.php:
 ```php
 // MaClasse.php
 class MaClasse {
