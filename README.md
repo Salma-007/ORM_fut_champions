@@ -1,6 +1,5 @@
 # Documentation en POO
 
-## Objectif de la OOP 
 ### Définition 
 La programmation orientée objet modélise les entités du monde réel en utilisant des objets. 
 ### Avantages 
@@ -13,7 +12,7 @@ La programmation orientée objet modélise les entités du monde réel en utilis
 - **Héritage**: Créer des classes dérivées à partir de classes existantes.
 - **Polymorphisme**: Utiliser une interface commune pour différents types d'objets.
   
-## Classes et Objets
+## 1. Classes et Objets
 ### Définir une classe et créer un objet
 ```php
   class Person {
@@ -48,10 +47,10 @@ class Database {
     }
 }
 ```
-## Modificateurs d'accès
-**public**: Accessible partout.
-**private**: Accessible uniquement au sein de la classe.
-**protected**: Accessible dans la classe et ses sous-classes.
+## 2. Modificateurs d'accès
+- **public**: Accessible partout.
+- **private**: Accessible uniquement au sein de la classe.
+- **protected**: Accessible dans la classe et ses sous-classes.
 Exemple:
 ```php
 class Example {
@@ -68,12 +67,12 @@ class Example {
     }
 }
 ```
-## Encapsulation
-encapsulation est souvent mise en œuvre en définissant la visibilité des propriétés et des méthodes à l’intérieur de la classe. Les trois niveaux de visibilité les plus couramment utilisés sont :
+## 3. Encapsulation
+L'encapsulation est souvent mise en œuvre en définissant la visibilité des propriétés et des méthodes à l’intérieur de la classe. Les trois niveaux de visibilité les plus couramment utilisés sont :
 
 - Public : Les propriétés et les méthodes publiques sont accessibles depuis n’importe où, à l’intérieur ou à l’extérieur de la classe.
 - Protected : Les propriétés et les méthodes protégées sont accessibles uniquement depuis la classe elle-même et les classes héritières.
-  Private : Les propriétés et les méthodes privées ne sont accessibles qu’à l’intérieur de la classe où elles sont définies.
+- Private : Les propriétés et les méthodes privées ne sont accessibles qu’à l’intérieur de la classe où elles sont définies.
 ```php
 class MaClasse {
     public $publicProp = "Propriété publique";
@@ -91,7 +90,7 @@ echo $objet->publicProp . ""; // Accès autorisé
 //echo $objet->privateProp . ""; // Erreur fatale : accès privé
 ```
 
-## Héritage:
+## 4. Héritage:
 L’héritage permet à une classe enfant de bénéficier des propriétés et des méthodes définies dans sa classe parente, tout en lui permettant de définir ses propres fonctionnalités supplémentaires. Cela favorise la réutilisabilité du code en évitant la duplication et en encourageant la création de relations logiques entre les classes.
 En PHP, l’héritage est mis en œuvre à l’aide du mot-clé **extends**.
 Exemple :
@@ -112,7 +111,7 @@ $dog = new Dog();
 $dog->speak();
 $dog->bark();
 ```
-## Polymorphisme:
+## 5. Polymorphisme:
 Le polymorphisme est la capacité pour des objets de différentes classes à répondre de manière différente à la même action ou au même appel de méthode. Cela signifie que vous pouvez appeler une méthode sur un objet sans connaître sa classe spécifique, et l’objet réagira de manière appropriée en fonction de sa propre implémentation de cette méthode.
 Par exemple, supposons que nous ayons une classe parente Forme avec une méthode calculerSurface() :
 ```php
@@ -140,7 +139,7 @@ class Rectangle extends Forme {
 ```
 Lorsque vous appelez la méthode calculerSurface() sur un objet de type Cercle, le calcul de la surface du cercle est effectué, et lorsque vous l’appelez sur un objet de type Rectangle, le calcul de la surface du rectangle est effectué. Cela montre comment chaque objet réagit différemment à la même méthode, ce qui est le principe du polymorphisme.
 
-## Abstraction
+## 6. Abstraction
 L’abstraction consiste à représenter les caractéristiques essentielles d’un objet sans se préoccuper des détails concrets de sa mise en œuvre. En d’autres termes, l’abstraction permet de définir une interface commune pour un ensemble d’objets similaires, en isolant les détails spécifiques dans les classes concrètes.
 ```php
 abstract class Vehicle {
@@ -161,7 +160,7 @@ $car = new Car();
 $car->move(); // Outputs: Car is moving.
 $car->fuelType(); // Outputs: This vehicle uses fuel.
 ```
-## Interface:
+## 7. Interface:
 Les interfaces en PHP permettent de définir des méthodes communes que les classes doivent implémenter. Elles servent de contrat pour garantir que les classes qui les implémentent offrent certaines fonctionnalités. Une interface ne contient que la signature des méthodes (nom et paramètres), sans fournir d’implémentation concrète. Donc, lorsque vous créez une interface, vous déclarez essentiellement un ensemble de méthodes, mais vous ne fournissez pas d’implémentation pour ces méthodes.
 Ensuite, lorsque vous créez une classe qui implémente cette interface, vous devez fournir une implémentation concrète pour chaque méthode définie dans l’interface. Cela garantit que votre objet respecte le contrat défini par l’interface et offre les fonctionnalités attendues.
 ```php
@@ -181,7 +180,7 @@ class Chat implements Animal {
     }
 }
 ```
-## Traits:
+## 8. Traits:
 Les traits sont un mécanisme de réutilisation de code en PHP qui permettent de définir des méthodes qui peuvent être incluses dans plusieurs classes. Ils offrent une alternative à l’héritage multiple, permettant ainsi d’éviter certains des problèmes liés à la complexité de l’héritage.
 ### Déclaration et utilisation de traits en POO
 Pour déclarer un trait, utilisez le mot-clé **trait**, suivi du nom du trait et de son contenu, qui consiste généralement en des méthodes. Pour utiliser un trait dans une classe, utilisez le mot-clé **use** suivi du nom du trait.
@@ -219,7 +218,7 @@ $user->login(); // Affichera "Connecté avec succès!"
 $admin = new Admin();
 $admin->logout(); // Affichera "Déconnecté avec succès!"
 ```
-## Autoload:
+## 9. Autoload:
 L’autoload en PHP est un mécanisme qui permet de charger automatiquement les classes lorsqu’elles sont utilisées pour la première fois dans votre code, sans avoir à les inclure manuellement avec require ou include. Cela rend la gestion des dépendances de classe beaucoup plus facile et évite d’avoir à écrire des tonnes d’instructions require_once dans chaque fichier.
 Voici un exemple concret pour illustrer comment fonctionne l’autoload. Supposons que nous ayons une classe MaClasse définie dans un fichier MaClasse.php:
 ```php
@@ -248,7 +247,7 @@ $objet = new MaClasse(); // Affichera "Instance de MaClasse créée !"
 ```
 Dans cet exemple, la fonction spl_autoload_register() enregistre une fonction d’autoload anonyme qui sera appelée chaque fois qu’une classe est utilisée mais n’est pas encore définie. Cette fonction convertit alors le nom de la classe en un chemin de fichier, puis vérifie si ce fichier existe. Si c’est le cas, elle l’inclut automatiquement avec require_once. Ainsi, lorsque nous instancions MaClasse dans index.php, PHP charge automatiquement le fichier MaClasse.php et nous pouvons utiliser la classe sans problème.
 
-## Namespaces:
+## 10. Namespaces:
 Les namespaces sont des containers virtuels permettant d’organiser les classes, interfaces, fonctions et constantes en groupes logiques. Ils aident à éviter les collisions de noms entre différentes parties de votre code et facilitent le partage de code entre différentes parties d’une application.
 ```php
 // Déclaration d'un namespace
@@ -266,22 +265,92 @@ $voiture->demarrer(); // Affichera "La voiture démarre !"
 ```
 Dans cet exemple, nous avons déclaré un namespace MonProjet\Vehicules en utilisant le mot-clé namespace. Ensuite, nous avons défini une classe Voiture à l’intérieur de ce namespace. Lorsque nous utilisons la classe Voiture, nous l’appelons en utilisant son nom complet, c’est-à-dire MonProjet\Vehicules\Voiture.
 
-## Méthodes Magiques :
+## 11. Méthodes Magiques :
 Les méthodes magiques en programmation orientée objet (POO) sont des méthodes spéciales qui ont des noms préfixés par deux caractères de soulignement __. Elles sont appelées automatiquement par le langage de programmation lors de certaines interactions avec les objets, sans que vous ayez besoin de les appeler explicitement dans votre code.
 
 Par exemple, lorsque vous créez un nouvel objet en utilisant le mot-clé **new**, PHP sait automatiquement qu’il doit appeler la méthode magique **__construct()** pour effectuer toute initialisation nécessaire de l’objet. De même, lorsque vous utilisez l’objet dans un contexte de chaîne de caractères.
-La méthode **__toString()** est appelée automatiquement lorsqu’un objet est utilisé dans un contexte de chaîne de caractères, par exemple lorsqu’il est passé à la fonction echo.
+### 1. __construct
+Cette méthode est le constructeur d'une classe. Elle est automatiquement appelée lors de l'instanciation d'un objet et est utilisée pour initialiser les propriétés ou exécuter du code nécessaire dès la création de l'objet.
 ```php
-class MaClasse {
-    public function __toString() {
-        return "Ceci est une représentation de l'objet MaClasse.";
+class User {
+    public $name;
+
+    public function __construct($name) {
+        $this->name = $name;
+        echo "Bienvenue, $this->name !\n";
     }
 }
 
-$objet = new MaClasse();
-echo $objet;
+$user = new User("Naeem"); // Affiche : "Bienvenue, Naeem !"
 ```
-## Gestion des Erreurs et Exceptions :
+### 2. __destruct
+Cette méthode est le destructeur d'une classe. Elle est automatiquement appelée lorsque l'objet est détruit ou n'est plus référencé (par exemple, à la fin du script). Elle est souvent utilisée pour libérer des ressources, comme des connexions à une base de données.
+```php
+class FileHandler {
+    private $file;
+
+    public function __construct($filename) {
+        $this->file = fopen($filename, 'w');
+    }
+
+    public function write($content) {
+        fwrite($this->file, $content);
+    }
+
+    public function __destruct() {
+        fclose($this->file);
+        echo "Fichier fermé.\n";
+    }
+}
+
+$fileHandler = new FileHandler("example.txt");
+$fileHandler->write("Bonjour, monde!");
+// À la fin du script : "Fichier fermé."
+```
+### 3. __get
+Cette méthode est utilisée pour accéder à des propriétés inaccessibles (par exemple, privées ou inexistantes). Elle est appelée automatiquement lorsqu'une propriété est lue, mais n'est pas directement accessible.
+```php
+class User {
+    private $data = [
+        'name' => 'Naeem',
+        'email' => 'naeem@example.com'
+    ];
+
+    public function __get($property) {
+        if (array_key_exists($property, $this->data)) {
+            return $this->data[$property];
+        }
+        return "Propriété $property non définie.\n";
+    }
+}
+
+$user = new User();
+echo $user->name; // Affiche : Naeem
+echo $user->email; // Affiche : naeem@example.com
+echo $user->age; // Affiche : Propriété age non définie.
+```
+### 4. __set
+Cette méthode est utilisée pour attribuer des valeurs à des propriétés inaccessibles. Elle est appelée automatiquement lorsqu'une propriété inaccessible ou inexistante est modifiée.
+```php
+class User {
+    private $data = [];
+
+    public function __set($property, $value) {
+        $this->data[$property] = $value;
+        echo "Propriété $property définie avec la valeur $value.\n";
+    }
+
+    public function __get($property) {
+        return $this->data[$property] ?? null;
+    }
+}
+
+$user = new User();
+$user->name = "Naeem"; // Affiche : Propriété name définie avec la valeur Naeem.
+echo $user->name; // Affiche : Naeem
+```
+
+## 12. Gestion des Erreurs et Exceptions :
 En POO, une exception est une classe spéciale utilisée pour signaler des erreurs ou des conditions exceptionnelles dans votre code. Les exceptions permettent de séparer la logique normale de la gestion des erreurs, ce qui rend votre code plus clair et plus facile à maintenir. 
 ```php
 class MonException extends Exception {
@@ -320,7 +389,7 @@ try {
 ```
 Dans cet exemple, le bloc finally est exécuté quel que soit le résultat de l’exécution du bloc try. Cela permet d’exécuter des opérations de nettoyage ou de finalisation, même en cas d’exception.
 
-## Principes SOLID:
+## 13. Principes SOLID:
 Les principes SOLID sont un ensemble de cinq principes de conception de logiciels qui visent à rendre le code plus compréhensible, flexible et maintenable. Voici un aperçu de chacun de ces principes et comment les appliquer en PHP.
 
 ### 1. Single Responsibility Principle (SRP):
